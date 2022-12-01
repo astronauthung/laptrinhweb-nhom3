@@ -81,8 +81,8 @@ Route::resource('/review','ProductReviewController');
 Route::post('product/{slug}/review','ProductReviewController@store')->name('review.store');
 
 // Post Comment 
-Route::post('post/{slug}/comment','PostCommentController@store')->name('post-comment.store');
-Route::resource('/comment','PostCommentController');
+// Route::post('post/{slug}/comment','PostCommentController@store')->name('post-comment.store');
+// Route::resource('/comment','PostCommentController');
 // Coupon
 Route::post('/coupon-store','CouponController@couponStore')->name('coupon-store');
 // Payment
@@ -121,8 +121,8 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     // Post
     Route::resource('/post','PostController');
     // Message
-    Route::resource('/message','MessageController');
-    Route::get('/message/five','MessageController@messageFive')->name('messages.five');
+    // Route::resource('/message','MessageController');
+    // Route::get('/message/five','MessageController@messageFive')->name('messages.five');
 
     // Order
     Route::resource('/order','OrderController');
@@ -135,21 +135,13 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::post('setting/update','AdminController@settingsUpdate')->name('settings.update');
 
     // Notification
-    Route::get('/notification/{id}','NotificationController@show')->name('admin.notification');
-    Route::get('/notifications','NotificationController@index')->name('all.notification');
-    Route::delete('/notification/{id}','NotificationController@delete')->name('notification.delete');
+    // Route::get('/notification/{id}','NotificationController@show')->name('admin.notification');
+    // Route::get('/notifications','NotificationController@index')->name('all.notification');
+    // Route::delete('/notification/{id}','NotificationController@delete')->name('notification.delete');
     // Password Change
     Route::get('change-password', 'AdminController@changePassword')->name('change.password.form');
     Route::post('change-password', 'AdminController@changPasswordStore')->name('change.password');
 });
-
-
-
-
-
-
-
-
 
 
 // User section start
